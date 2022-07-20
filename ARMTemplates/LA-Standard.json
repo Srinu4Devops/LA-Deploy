@@ -7,7 +7,7 @@
             "type": "String"
         },
         "rg": {
-           "defaulValue": "LA-DEV"
+           "defaultValue": "LA-DEV"
         },
         "providers": {
             "defaultValue": "providers/Microsoft.Web/connections/",
