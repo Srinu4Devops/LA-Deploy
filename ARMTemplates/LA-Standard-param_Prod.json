@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "workflows_LA_Email_Rss_name": {
-            "value": "LA-Email-Rss-PROD"
+            "value": "LA-Email-Rss-PROD-1st"
         },
         "connections_gmail_externalid": {
             "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/LA-PROD/providers/Microsoft.Web/connections/gmail"
