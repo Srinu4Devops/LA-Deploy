@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workflows_LA_Email_Rss_name": {
+            "value": "LA-Email-Rss-Dev"
+        },
+        "connections_gmail_externalid": {
+            "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/LA-DEV/providers/Microsoft.Web/connections/gmail"
+        },
+        "connections_rss_externalid": {
+            "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/LA-DEV/providers/Microsoft.Web/connections/rss"
+        },
+        "sub-id": {
+            "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/"
+        },
+        "rg": {
+           "value": "resourceGroups/LA-DEV/"
+        },
+        "providers": {
+            "value": "providers/Microsoft.Web/connections/"
+        },
+        "location": {
+            "value": "locations/eastus"
+        }
+    }
+}

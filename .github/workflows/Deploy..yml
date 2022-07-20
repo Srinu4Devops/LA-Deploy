@@ -1,0 +1,40 @@
+name: LA-Build&Deploy-Dev
+on: push
+jobs:
+  LA-BiludAndDeploy-Dev:
+   runs-on: ubuntu-latest
+   environment: Development
+   steps:
+     - uses: azure/login@v1
+       with:
+         creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+     - name: Checkout source code 
+       uses: actions/checkout@v2
+     
+     - name: Deploy ARM Template
+       uses: azure/arm-deploy@v1
+       with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resourceGroupName: ${{ secrets.AZURE_RG }}
+          template: ./ARMTemplates/LA-Standard.json
+          parameters: ./ARMTemplates/LA-Standard-param_Dev.json
+  LA-BiludAndDeploy-prod:
+    runs-on: ubuntu-latest
+    needs: LA-BiludAndDeploy-Dev
+    environment: Production
+    steps:
+        - uses: azure/login@v1
+          with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+                  
+        - name: Checkout source code 
+          uses: actions/checkout@v2
+               
+        - name: Deploy ARM Template
+          uses: azure/arm-deploy@v1
+          with:
+            subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+            resourceGroupName: ${{ secrets.AZURE_RG }}
+            template: ./ARMTemplates/LA-Standard.json
+            parameters: ./ARMTemplates/LA-Standard-param_Prod.json
