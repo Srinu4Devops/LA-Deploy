@@ -6,10 +6,10 @@
             "value": "LA-Email-Rss-PROD"
         },
         "connections_gmail_externalid": {
-            "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/LA-DEV/providers/Microsoft.Web/connections/gmail"
+            "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/LA-PROD/providers/Microsoft.Web/connections/gmail"
         },
         "connections_rss_externalid": {
-            "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/LA-DEV/providers/Microsoft.Web/connections/rss"
+            "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/LA-PROD/providers/Microsoft.Web/connections/rss"
         },
         "sub-id": {
             "value": "beb2107a-2219-488b-929e-7939bb20b9a2"
