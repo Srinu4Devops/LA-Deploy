@@ -3,11 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sub-id": {
-            "defaultValue": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/",
+            "defaultValue": "beb2107a-2219-488b-929e-7939bb20b9a2",
             "type": "String"
         },
         "rg": {
-           "defaultValue": "resourceGroups/LA-DEV/",
+           "defaulValue": "LA-DEV",
            "type": "String"
         },
         "providers": {
@@ -15,7 +15,7 @@
             "type": "String"
         },
         "location": {
-            "defaultValue": "locations/eastus/",
+            "defaultValue": "eastus",
             "type": "String"
         },
         "workflows_LA_Email_Rss_name": {
@@ -23,11 +23,11 @@
             "type": "String"
         },
         "connections_gmail_externalid": {
-            "defaultValue": "[concat(parameters('sub-id'), parameters('rg'), parameters('providers'),'gmail')]",
+            "defaultValue": "[concat( '/subscriptions', '/', parameters('sub-id'), '/resourceGroups/', parameters('rg'), '/',parameters('providers'), 'gmail')]",
             "type": "String"
         },
         "connections_rss_externalid": {
-            "defaultValue": "[concat(parameters('sub-id'), parameters('rg'), parameters('providers'),'rss')]",
+            "defaultValue": "[concat( '/subscriptions', '/', parameters('sub-id'), '/resourceGroups/', parameters('rg'), '/',parameters('providers'), 'rss')]",
             "type": "String"
         }
     },
@@ -37,7 +37,7 @@
             "type": "Microsoft.Logic/workflows",
             "apiVersion": "2017-07-01",
             "name": "[parameters('workflows_LA_Email_Rss_name')]",
-            "location": "eastus",
+            "location": "[parameters('location')]",
             "properties": {
                 "state": "Enabled",
                 "definition": {
@@ -104,12 +104,12 @@
                             "gmail": {
                                 "connectionId": "[parameters('connections_gmail_externalid')]",
                                 "connectionName": "gmail",
-                                "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location,'/managedApis/gmail')]"
+                                "id": "[ concat( '/subscriptions/',parameters('sub-id'),'/providers/Microsoft.Web/locations', parameters('location'), '/managedApis/gmail')]"
                             },
                             "rss": {
                                 "connectionId": "[parameters('connections_rss_externalid')]",
                                 "connectionName": "rss",
-                                "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location,'/managedApis/rss')]"
+                                "id": "[ concat( '/subscriptions/',parameters('sub-id'),'/providers/Microsoft.Web/locations', parameters('location'), '/managedApis/rss')]"
                             }
                         }
                     }

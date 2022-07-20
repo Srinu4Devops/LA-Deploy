@@ -12,16 +12,16 @@
             "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/LA-PROD/providers/Microsoft.Web/connections/rss"
         },
         "sub-id": {
-            "value": "/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/"
+            "value": "beb2107a-2219-488b-929e-7939bb20b9a2"
         },
         "rg": {
-           "value": "resourceGroups/LA-PROD/"
+           "value": "LA-PROD"
         },
         "providers": {
             "value": "providers/Microsoft.Web/connections/"
         },
         "location": {
-            "value": "locations/westus"
+            "value": "westus"
         }
     }
 }
