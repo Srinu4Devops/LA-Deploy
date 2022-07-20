@@ -104,12 +104,12 @@
                             "gmail": {
                                 "connectionId": "[parameters('connections_gmail_externalid')]",
                                 "connectionName": "gmail",
-                                "id": "[ concat( '/subscriptions/',parameters('sub-id'),'/providers/Microsoft.Web/locations', parameters('location'), '/managedApis/gmail')]"
+                                "id": "[ concat( '/subscriptions/',parameters('sub-id'),'/providers/Microsoft.Web/locations/', parameters('location'), '/managedApis/gmail')]"
                             },
                             "rss": {
                                 "connectionId": "[parameters('connections_rss_externalid')]",
                                 "connectionName": "rss",
-                                "id": "[ concat( '/subscriptions/',parameters('sub-id'),'/providers/Microsoft.Web/locations', parameters('location'), '/managedApis/rss')]"
+                                "id": "[ concat( '/subscriptions/',parameters('sub-id'),'/providers/Microsoft.Web/locations/', parameters('location'), '/managedApis/rss')]"
                             }
                         }
                     }
