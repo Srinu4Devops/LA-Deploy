@@ -5,12 +5,14 @@ jobs:
    runs-on: ubuntu-latest
    environment: Development
    steps:
+     - name: Checkout source code 
+       uses: actions/checkout@master
+       
      - uses: azure/login@v1
        with:
          creds: ${{ secrets.AZURE_CREDENTIALS }}
         
-     - name: Checkout source code 
-       uses: actions/checkout@v2
+    
      
      - name: Deploy ARM Template
        uses: azure/arm-deploy@v1
